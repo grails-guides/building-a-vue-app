@@ -1,0 +1,43 @@
+Let's start by creating our domain model for the application.
+
+[source,bash]
+----
+$ grails create-domain-class vuebackend.Vehicle
+$ grails create-domain-class vuebackend.Driver
+$ grails create-domain-class vuebackend.Make
+$ grails create-domain-class vuebackend.Model
+----
+
+Now let's edit our domain class under `grails-app/domain/vuebackend/`. We'll add some properties and the `@Resource` annotation.
+
+[source,groovy]
+.server/grails-app/domain/vuebackend/Vehicle.groovy
+----
+include::{sourceDir}/server/grails-app/domain/vuebackend/Vehicle.groovy[]
+----
+
+[source,groovy]
+.server/grails-app/domain/vuebackend/Driver.groovy
+----
+include::{sourceDir}/server/grails-app/domain/vuebackend/Driver.groovy[]
+----
+
+[source,groovy]
+.server/grails-app/domain/vuebackend/Make.groovy
+----
+include::{sourceDir}/server/grails-app/domain/vuebackend/Make.groovy[]
+----
+
+[source,groovy]
+.server/grails-app/domain/vuebackend/Model.groovy
+----
+include::{sourceDir}/server/grails-app/domain/vuebackend/Model.groovy[]
+----
+
+Since we've added the `@Resource` annotation to our domain classes, Grails will generate RESTful URL mappings for each of them. Let's preload some data:
+
+[source,groovy]
+.server/grails-app/init/vuebackend/BootStrap.groovy
+----
+include::{sourceDir}/server/grails-app/init/vuebackend/BootStrap.groovy[]
+----

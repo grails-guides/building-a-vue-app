@@ -1,0 +1,1 @@
+In this guide you are going to create Grails app using Vue.js as the view layer.
