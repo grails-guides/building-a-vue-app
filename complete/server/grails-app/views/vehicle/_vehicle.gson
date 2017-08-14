@@ -1,4 +1,4 @@
-import demo.Vehicle
+import vuebackend.Vehicle
 
 model {
     Vehicle vehicle
