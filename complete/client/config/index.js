@@ -23,7 +23,9 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
+    // tag::clientPort[]
     port: 3000,
+    // end::clientPort[]
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',

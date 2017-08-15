@@ -66,10 +66,11 @@ grails:
         encoding: UTF-8
 
 ---
-# Had to add to allow Vuejs to talk to grails
+# tag::cmpYmlP1[]
 grails:
     cors:
         enabled: true
+# end::cmpYmlP1[]
 hibernate:
     cache:
         queries: false

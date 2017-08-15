@@ -1,0 +1,10 @@
+Our API for our Vue.js application is now in place and if you generated your app using the the `Vue` profile
+from the http://start.grails.org[forge] you can skip this step. If you are using our initial app or if you
+generated your grails application using the `rest-api` profile you will need to enable CORS in the
+`grails-app/conf/application.yml`.
+
+[source,yaml]
+./server/grails-app/conf/application.yml
+----
+include::{sourceDir}/server/grails-app/conf/application.yml[indent=0, tag=cmpYmlP1]
+----

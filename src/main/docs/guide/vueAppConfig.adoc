@@ -1,0 +1,27 @@
+Since we are already looking at the client side configuration lets finish getting that out of the way. Create
+a `config` folder under `client/src`.
+
+[source,bash]
+----
+$ cd initial/client/src
+$ mkdir config
+----
+
+Next create a `config.js`
+
+[source,bash]
+----
+$ cd initial/client/src/config
+$ touch config.js
+----
+
+Now that we have our last config file in place go ahead and make the following changes to it.
+
+[source, javascript]
+./client/src/config/config.js
+----
+include::{sourceDir}/client/src/config/config.js[]
+----
+
+This constant of our server url will be used to avoid duplicate code in our app and will make it easy in the
+future to change the url if necessary.

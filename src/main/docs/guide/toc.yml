@@ -2,11 +2,17 @@ gettingStarted:
   title: Getting Started
   requirements: What you will need
   howto: How to complete the guide
-writingTheApp:
-  title: Writing the Application
 runningTheApp:
   title: Running the Application
+writingTheServer:
+  title: Building the Server
+  grailsConfig: Grails config for Vue.js
+  testingApi: Testing the API
   customizingApi: Customizing the API
+writingTheClient:
+  title: Building the Client
+  vueConfig: Vue.js config customizations
+  vueAppConfig: Server URL
 #writingReactComponents:
 #  title: Writing our React components
 #  vehicles: Writing the Vehicles component

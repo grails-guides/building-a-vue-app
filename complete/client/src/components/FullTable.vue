@@ -44,7 +44,7 @@
     created: function () {
       this.fetchData()
     },
-    updated: function () { // this is required to update view after adding a vehicle
+    updated: function () { // this is required to update view after adding a vehicle, but continuously runs :(
       // this.fetchData()
     },
     methods: {

@@ -1,87 +1,26 @@
-
-Now, if we run our app, we can try out the RESTful API that Grails has generated for us. Make sure that
-you are in your `server` directory then start up the app using
- a local installation of Grails 3.3.0 or one of the provided wrappers: `./gradlew bootRun` or
- `./grailsw run-app`
+The app in this guide uses the `vue` profile, which provides a multiproject client/server build. This
+means you must start both the server (Grails) and client (Vue.js) apps independently.
 
 [source,bash]
 ----
-$ cd server
-$ ./grailsw run-app
+$ cd initial/
 ----
 
-Now we can exercise the API using cURL or another API tool.
-
-Make a `GET` request to `/vehicle` to get a list of Vehicles:
+To launch the server application, run the following command.
 
 [source,bash]
 ----
-$ curl -X "GET" "http://localhost:8080/vehicle"
-
-HTTP/1.1 200
-X-Application-Context: application:development
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Fri, 06 Jan 2017 19:28:49 GMT
-Connection: close
-
-[{"id":1,"driver":{"id":1},"make":{"id":1},"model":{"id":1},"name":"Pickup"},
-{"id":2,"driver":{"id":1},"make":{"id":1},"model":{"id":2},"name":"Economy"},
-{"id":3,"driver":{"id":2},"make":{"id":2},"model":{"id":3},"name":"Minivan"}]
+$ ./gradlew server:bootRun
 ----
 
-Make a `GET` request to `/driver/1` to get a particular Driver instance:
+This will start up the Grails application, which will be running on `http://localhost:8080`
+
+To start the client app, open a second terminal session (in the same directory), and run the following command:
+
 
 [source,bash]
 ----
-$ curl -X "GET" "http://localhost:8080/driver/1"
-
-HTTP/1.1 200
-X-Application-Context: application:development
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Fri, 06 Jan 2017 22:10:33 GMT
-Connection: close
-
-{"id":1,"name":"Susan","vehicle":[{"id":2},{"id":1}]}
+$ ./gradlew client:bootRun
 ----
 
-Make a `POST` request to `/driver` to create a new Driver instance:
-
-[source,bash]
-----
-$ curl -X "POST" "http://localhost:8080/driver" \
-      -H "Content-Type: application/json; charset=utf-8" \
-      -d '{"name":"Edward"}'
-
-HTTP/1.1 201
-X-Application-Context: application:development
-Location: http://localhost:8080/driver/3
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Fri, 06 Jan 2017 21:55:59 GMT
-Connection: close
-
-{"id":3,"name":"Edward"}
-----
-
-Make a `PUT` request to `/vehicle` to update a Vehicle instance:
-
-[source,bash]
-----
-$ curl -X "PUT" "http://localhost:8080/vehicle/1" \
-       -H "Content-Type: application/json; charset=utf-8" \
-       -d '{"name":"Truck","id":1}'
-
-HTTP/1.1 200
-X-Application-Context: application:development
-Location: http://localhost:8080/vehicle/1
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Fri, 06 Jan 2017 22:12:31 GMT
-Connection: close
-
-{"id":1,"driver":{"id":1},"make":{"id":1},"model":{"id":1},"name":"Truck"}
-----
-
-
+The Vue.js app will be available at `http://localhost:3000`. Browse to that URL and you should see the home page of the app.
