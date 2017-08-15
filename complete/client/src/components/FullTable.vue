@@ -45,7 +45,7 @@
       this.fetchData()
     },
     updated: function () { // this is required to update view after adding a vehicle
-      this.fetchData()
+      // this.fetchData()
     },
     methods: {
       fetchData: function () {
