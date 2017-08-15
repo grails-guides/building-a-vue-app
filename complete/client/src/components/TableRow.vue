@@ -1,3 +1,4 @@
+<!-- Templates can have only one root element -->
 <template id="tablerow-template">
   <tbody>
     <tr v-for="item in rowData">
@@ -18,6 +19,7 @@
   }
 </script>
 
-
-// https://github.com/vuejs/vue/issues/3039
-// https://codepen.io/khamer/pen/ZQbQXp
+<!-- Per Component Custom CSS Rules -->
+<style>
+  /* Add custom rules here */
+</style>

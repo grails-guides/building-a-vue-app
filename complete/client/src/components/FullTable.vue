@@ -1,4 +1,5 @@
-<template id="fulltable-template">
+<!-- Templates can have only one root element -->
+<template id="fulltable-template" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 	<table class="table">
     <thead class="thead-inverse">
       <tr>
@@ -27,6 +28,8 @@
 
 <script>
   import TableRow from '../components/TableRow.vue'
+  import { SERVER_URL } from '../config/config'
+
   export default {
     name: 'fulltable',
     template: '#fulltable-template',
@@ -41,17 +44,24 @@
     created: function () {
       this.fetchData()
     },
+    updated: function () { // this is required to update view after adding a vehicle
+      this.fetchData()
+    },
     methods: {
       fetchData: function () {
-        fetch('http://localhost:8080/vehicle')
+        fetch(`${SERVER_URL}/vehicle`)
           .then(r => r.json())
           .then(json => this.setData(json))
           .catch(error => console.error('Error retrieving makes: ' + error))
       },
       setData: function (data) {
         this.vehicles = data
-        console.log(this.vehicles)
       }
     }
   }
 </script>
+
+<!-- Per Component Custom CSS Rules -->
+<style>
+  /* Add custom rules here */
+</style>

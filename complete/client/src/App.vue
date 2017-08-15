@@ -1,69 +1,30 @@
 <template>
   <div id="app">
-    <div class="container">
-      <div class="jumbotron">
-
-        <img src="./assets/logo.png">
-        <h1>Welcome to the Garage</h1>
-      </div>
-    </div>
-    <div id="headerRow" class="row">
-      <div class="col">
-        <h3>Add a Vehicle:</h3>
-      </div>
-      <div class="col"></div>
-      <div class="col"></div>
-    </div>
-    <div id="inputRow" class="row">
-      <div class="col"></div>
-      <div class="col-2">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Enter a name...">
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="row">
-          <div class="col"><make-select></make-select></div>
-          <div class="col"><model-select></model-select></div>
-          <div class="col"><driver-select></driver-select></div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="btn-group" role="group" aria-label="Add new vehicle">
-          <button type="button" class="btn btn-success">Add to Garage</button>
-        </div>
-      </div>
-      <div class="col"></div>
-    </div>
-    <div id="tableRow" class="row">
-      <div class="col"></div>
-      <div class="col-8">
-        <fulltable></fulltable>
-      </div>
-      <div class="col"></div>
-    </div>
-
-     <!--<router-view></router-view>-->
+    <app-header></app-header>
+    <vehicle-add-header></vehicle-add-header>
+    <vehicle-add></vehicle-add>
+    <vehicle-display></vehicle-display>
   </div>
 </template>
 
 <script>
-  import FullTable from './components/FullTable.vue'
-  import MakeSelect from './components/MakeSelect.vue'
-  import ModelSelect from './components/ModelSelect'
-  import DriverSelect from './components/DriverSelect'
+  import AppHeader from './components/AppHeader'
+  import VehicleAddHeader from './components/VehicleAddHeader'
+  import VehicleAdd from './components/VehicleAdd'
+  import VehicleDisplay from './components/VehicleDisplay'
 
   export default {
     name: 'app',
     components: {
-      'fulltable': FullTable,
-      MakeSelect,
-      ModelSelect,
-      DriverSelect
+      AppHeader,
+      VehicleAddHeader,
+      VehicleAdd,
+      VehicleDisplay
     }
   }
 </script>
 
+<!-- Per Component Custom CSS Rules -->
 <style>
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -72,8 +33,5 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
-  }
-  #tableRow {
-    margin-top: 15px;
   }
 </style>
