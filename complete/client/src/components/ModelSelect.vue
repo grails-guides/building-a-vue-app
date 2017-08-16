@@ -1,4 +1,4 @@
-<!-- Templates can have only one root element -->
+<!-- Templates can have only one root element --> // <6>
 <template id="modelSelect-template" xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <div class="form-group">
     <select class="form-control" v-model="selected" @change="updateValue()">
@@ -16,17 +16,17 @@
   export default {
     name: 'modelSelect',
     template: '#modelSelect-template',
-    props: ['value'],
-    data: function () {
+    props: ['value'],        // <1>
+    data: function () {      // <2>
       return {
         models: [],
-        selected: this.value
+        selected: this.value // <3>
       }
     },
-    created: function () {
+    created: function () {   // <4>
       this.fetchData()
     },
-    methods: {
+    methods: {               // <5>
       fetchData: function () {
         fetch(`${SERVER_URL}/model`)
           .then(r => r.json())

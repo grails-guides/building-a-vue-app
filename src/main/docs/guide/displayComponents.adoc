@@ -1,0 +1,107 @@
+Next we will create all of our data display components. These components will be used to fetch data from our
+API that we wrote in the <<writingTheServer>> portion of the guide. Our first three select components
+(for Make, Model, and Driver) are very similar as they all perform the exact same action but are
+accessing different API endpoints and will be
+included in our app independently. Each component will take a single `prop` and will `$emit` a single value back
+to its parent component (more on this in the next section <<postComponents>>), this is a good example of how
+Vue.js uses One-way data binding similar to React. In addition to the `name` and
+`template` properties discussed in the last section <<headers>> we will not add a `props` property, a `data`
+function, a `created` lifecycle hook, and a `methods` property that will contain our local component javascript
+methods. Finally a special call out that while components use One-way data binding we will also be introducing
+the 'v-model' attribute which allows two-way data binding for certain elements. To read more on `v-model` refer
+to the Vue docs https://vuejs.org/v2/guide/forms.html[here].
+
+Go ahead and create the following files.
+
+[source,bash]
+----
+$ cd initial/client/src/components
+$ touch MakeSelect.vue
+$ touch ModelSelect.vue
+$ touch DriverSelect.vue
+$ touch TableRow.vue
+$ touch FullTable.vue
+----
+
+Now edit them to look like the following...
+
+[source,javascript]
+./client/src/components/MakeSelect.vue
+----
+include::{sourceDir}/client/src/components/MakeSelect.vue[]
+----
+<1> Handle incoming prop.
+<2> Internal data state; needs to be written as a function, not just a property.
+<3> Set internal state to incoming property value.
+<4> The `created` Vue.js https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks[lifecycle hook]
+ fires once when the component is created. We are using it to call our custom method `fetchData` to populate
+ our component with data from our API.
+<5> Any custom Javascript methods need for the component.
+<6> Attaching our select component via two-way data binding with our internal state of `selected` and using
+`@change` to call our custom method `updateValue` in order to trigger our update to be emitted back to the parent
+component.
+
+[source,javascript]
+./client/src/components/ModelSelect.vue
+----
+include::{sourceDir}/client/src/components/ModelSelect.vue[]
+----
+<1> Handle incoming prop.
+<2> Internal data state; needs to be written as a function, not just a property.
+<3> Set internal state to incoming property value.
+<4> The `created` Vue.js https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks[lifecycle hook]
+ fires once when the component is created. We are using it to call our custom method `fetchData` to populate
+ our component with data from our API.
+<5> Any custom Javascript methods need for the component.
+<6> Attaching our select component via two-way data binding with our internal state of `selected` and using
+`@change` to call our custom method `updateValue` in order to trigger our update to be emitted back to the parent
+component.
+
+[source,javascript]
+./client/src/components/DriverSelect.vue
+----
+include::{sourceDir}/client/src/components/DriverSelect.vue[]
+----
+<1> Handle incoming prop.
+<2> Internal data state; needs to be written as a function, not just a property.
+<3> Set internal state to incoming property value.
+<4> The `created` Vue.js https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks[lifecycle hook]
+ fires once when the component is created. We are using it to call our custom method `fetchData` to populate
+ our component with data from our API.
+<5> Any custom Javascript methods need for the component.
+<6> Attaching our select component via two-way data binding with our internal state of `selected` and using
+`@change` to call our custom method `updateValue` in order to trigger our update to be emitted back to the parent
+component.
+
+Now we take a look at our `TableRow` component. `TableRow` takes a single prop of `rowData` to render.
+This is a sub-component of our `FullTable` component and is used specifically to map out each row of data.
+We will see it included in our next component for our first example of using a component within another component.
+
+[source,javascript]
+./client/src/components/TableRow.vue
+----
+include::{sourceDir}/client/src/components/TableRow.vue[]
+----
+<1> `v-for` attribute allows us to iterate over a list in HTML.
+
+Our final data display component (for a list of our vehicles) is a bit different from all of the above but
+is still structured the same and
+shares many similarities. The biggest difference is that `FullTable` does not take any `props` but includes
+a sub-component `TableRow`. `TableRow` handles the repeat logic of rendering table rows with different data.
+[source,javascript]
+./client/src/components/FullTable.vue
+----
+include::{sourceDir}/client/src/components/FullTable.vue[]
+----
+<1> Telling current component about sub-component.
+<2> Internal data state; needs to be written as a function, not just a property.
+<3> The `created` Vue.js https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks[lifecycle hook]
+ fires once when the component is created. We are using it to call our custom method `fetchData` to populate
+ our component with data from our API.
+<4> The `updated` Vue.js https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks[lifecycle hook]
+ TODO: this doesn't work correctly yet
+<5> Any custom Javascript methods need for the component.
+<6> Component template HTML including our sub-component declaration; the sub-component takes a single property
+of the `rowData` to iterate over. It is necessary to pass in the property with `v-bind`, this indicates we
+want to pass an object instead of a string literal. Also note this is an example as mentioned earlier where
+camel case switches to hyphenated, ex. `rowData` becomes `row-data`.

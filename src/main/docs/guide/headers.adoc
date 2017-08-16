@@ -1,0 +1,40 @@
+We will start off by writing two super simple components for our application. First we will create our new
+component files.
+
+[source,bash]
+----
+$ cd initial/client/src/components
+$ touch AppHeader.vue
+$ touch VehicleAddHeader.vue
+----
+
+Now that we have our files created we need to edit them to look like the following.
+Here is our AppHeader component ...
+
+[source,javascript]
+./client/src/components/AppHeader.vue
+----
+include::{sourceDir}/client/src/components/AppHeader.vue[]
+----
+
+and our VehicleAddHeader component ...
+
+[source,javascript]
+./client/src/components/VehicleAddHeader.vue
+----
+include::{sourceDir}/client/src/components/VehicleAddHeader.vue[]
+----
+
+As mentioned earlier we can see that components use vanilla HTML in their templates and each component allows
+for its own custom CSS. One thing to make note of is each component is only allowed to have a single template
+and each template must have a single root node.
+
+TIP: What this means is that inside the `template` tag everything must
+be inside a single `div` tag.
+
+Inside the `<script>` tag is where our component logic would go if any specific functions were required. In the
+case of these two very simple components all we need to do is to set our export name and link our component script
+to the template HTML above.
+
+NOTE: When declaring a component in another component the name will become hyphenated. Ex. `name: 'appheader'`
+will become `<app-header>`.

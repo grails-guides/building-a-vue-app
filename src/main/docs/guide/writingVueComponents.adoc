@@ -1,0 +1,5 @@
+Now we're ready to start creating our Vue components to view and interact with our API. We'll just
+handle listing Vehicles and creating new instances for now. Vue components are a little bit different compared
+to React or Angular in that all aspects of the component are encapsulated in a single `.vue` file. The `.vue`
+files can be located in your `client/src/components` directory and each file will contain the HTML template,
+associated Javascript functionality, and component specific CSS.

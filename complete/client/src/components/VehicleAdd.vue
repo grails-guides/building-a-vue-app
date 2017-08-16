@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import MakeSelect from '../components/MakeSelect'
+  import MakeSelect from '../components/MakeSelect' // <1>
   import ModelSelect from '../components/ModelSelect'
   import DriverSelect from '../components/DriverSelect'
   import { SERVER_URL } from '../config/config'
@@ -32,12 +32,12 @@
   export default {
     name: 'vehicleadd',
     template: '#add-vehicle-template',
-    components: {
+    components: { // <2>
       MakeSelect,
       ModelSelect,
       DriverSelect
     },
-    data: function () {
+    data: function () { // <3>
       return {
         make: '',
         model: '',
@@ -48,12 +48,12 @@
     methods: {
       submitNewVehicle: function () {
         console.log('submitNewVehicle...')
-        let vehicle = {name: this.name, make: this.make, model: this.model, driver: this.driver}
-        fetch(`${SERVER_URL}/vehicle`, {
+        let vehicle = {name: this.name, make: this.make, model: this.model, driver: this.driver} // <4>
+        fetch(`${SERVER_URL}/vehicle`, { // <5>
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(vehicle)
-        }).then(r => r.json())
+        }).then(r => r.json()) // <6>
           .then(json => console.log(json) // {
 //            let vehicles = this.state.vehicles
 //            vehicles.push({id: json.id, name: json.name, make: json.make, model: json.model, driver: json.driver})

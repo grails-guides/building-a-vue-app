@@ -8,14 +8,14 @@
 </template>
 
 <script>
-  import AppHeader from './components/AppHeader'
+  import AppHeader from './components/AppHeader' // <1>
   import VehicleAddHeader from './components/VehicleAddHeader'
   import VehicleAdd from './components/VehicleAdd'
   import VehicleDisplay from './components/VehicleDisplay'
 
   export default {
     name: 'app',
-    components: {
+    components: { // <2>
       AppHeader,
       VehicleAddHeader,
       VehicleAdd,

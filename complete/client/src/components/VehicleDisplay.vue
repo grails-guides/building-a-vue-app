@@ -15,7 +15,7 @@
   export default {
     name: 'vehicledisplay',
     template: '#display-vehicle-template',
-    components: {
+    components: { // <1>
       'fulltable': FullTable  // Dont understand why this one has to be written this way or the table doesnt show up
     }
   }

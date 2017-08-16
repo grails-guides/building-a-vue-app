@@ -1,0 +1,25 @@
+Now that everything is in place we are finally ready to tie it all together. Back in <<vueConfig>> we said we
+would return to our `App.vue` that Vue.js creates for us.
+
+[source,javascript]
+./client/src/App.vue
+----
+include::{sourceDir}/client/src/App.vue[]
+----
+<1> Import all of our components.
+<2> Inform our top level component about all our other imported components.
+
+As you see our top level component of `App` is just a collection of all our other components that we have
+already built.
+
+[source,html]
+----
+<app-header></app-header>
+<vehicle-add-header></vehicle-add-header>
+<vehicle-add></vehicle-add>
+<vehicle-display></vehicle-display>
+----
+
+Return to <<runningTheApp>> and run the app and you should see the following page.
+
+image::successfulApp.png[]

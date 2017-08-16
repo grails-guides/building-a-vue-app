@@ -1,4 +1,4 @@
-<!-- Templates can have only one root element -->
+<!-- Templates can have only one root element --> // <6>
 <template id="fulltable-template" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 	<table class="table">
     <thead class="thead-inverse">
@@ -12,17 +12,6 @@
     </thead>
       <!-- To pass an object v-bind is required -->
       <tablerow v-bind:row-data="vehicles"></tablerow>
-
-    <!-- The following works as well without a template -->
-    <!--<tbody>-->
-      <!--<tr v-for="vehicle in vehicles">-->
-          <!--<td>{{ vehicle.id }}</td>-->
-          <!--<td>{{ vehicle.name }}</td>-->
-          <!--<td>{{ vehicle.make.name }}</td>-->
-          <!--<td>{{ vehicle.model.name }}</td>-->
-          <!--<td>{{ vehicle.driver.name }}</td>-->
-      <!--</tr>-->
-    <!--</tbody>-->
 	</table>
 </template>
 
@@ -33,21 +22,22 @@
   export default {
     name: 'fulltable',
     template: '#fulltable-template',
-    components: {
+    components: {  // <1>
       'tablerow': TableRow
     },
-    data: function () {
+    data: function () { // <2>
       return {
         vehicles: []
       }
     },
-    created: function () {
+    created: function () { // <3>
       this.fetchData()
     },
-    updated: function () { // this is required to update view after adding a vehicle, but continuously runs :(
+    updated: function () { // <4>
+      // this is required to update view after adding a vehicle, but continuously runs :(
       // this.fetchData()
     },
-    methods: {
+    methods: { // <5>
       fetchData: function () {
         fetch(`${SERVER_URL}/vehicle`)
           .then(r => r.json())

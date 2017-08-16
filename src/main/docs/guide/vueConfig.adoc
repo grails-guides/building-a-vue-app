@@ -22,3 +22,18 @@ block.
 ----
 
 For more information on the `bootstrap-vue` project check out their docs https://bootstrap-vue.js.org/docs/setup/[here].
+Now that we have included the bootstrap framework in our project we need to make it accessible to our components.
+To use our new bootstrap library include the following in our `client/src/main.js`.
+
+[source,javascript]
+./client/src/main.js
+----
+include::{sourceDir}/client/src/main.js[]
+----
+<1> Include the three necessary imports to use bootstrap in our application
+<2> Tell Vue.js to use bootstrap
+<3> If you enabled es-lint allow the use of the `new` keyword
+
+The `main.js` is the entry point into our Vue.js application and it imports our top level `App.vue`. Including
+the above imports and `use` function are the only edits we will need to make to our `main.js` but we will revisit
+our `App.vue` in a little bit.

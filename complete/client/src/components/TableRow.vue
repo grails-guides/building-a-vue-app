@@ -1,4 +1,4 @@
-<!-- Templates can have only one root element -->
+<!-- Templates can have only one root element --> // <1>
 <template id="tablerow-template">
   <tbody>
     <tr v-for="item in rowData">

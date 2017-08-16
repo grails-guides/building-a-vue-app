@@ -1,0 +1,33 @@
+Now that we have all our display components in place and are fetching all the data we need to create a new vehicle
+lets create a POST component that will lets us send data back to the server. Our new component `VehicleAdd`
+will be composed using some of the components we just created as well as a few additional pieces.
+
+[source,bash]
+----
+$ cd initial/client/src/components
+$ touch VehicleAdd.vue
+----
+
+Take a look at our following template and you will see the calls to our previously created components.
+
+[source,html]
+./client/src/components/VehicleAdd.vue
+----
+<div class="col"><make-select v-model="make"></make-select></div>
+<div class="col"><model-select v-model="model"></model-select></div>
+<div class="col"><driver-select v-model="driver"></driver-select></div>
+----
+
+[source,javascript]
+./client/src/components/VehicleAdd.vue
+----
+include::{sourceDir}/client/src/components/VehicleAdd.vue[]
+----
+<1> Import our drop down fetch components.
+<2> Inform our current component that we are using additional components.
+<3> Internal data state; needs to be written as a function, not just a property. This is also where we set the
+initial value of the `selected` prop that is passed into our imported components.
+<4> Building our `vehicle` object for submission from the values that have been emitted back to the `VehicleAdd`
+component by way of using `v-model` for the prop of imported components.
+<5> POST call to server by way of the `fetch` API.
+<6> Get the returned JSON.

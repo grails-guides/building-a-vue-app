@@ -1,0 +1,23 @@
+Understanding the layout of a Vue.js app is fairly straight forward but here is a few quick tips on where to
+find different parts of your application. Your initial directory listing for the client should look like the
+following.
+
+./client
+image::vueDirListing.png[]
+
+If you need to change environment specific details you will fine those files located in the
+`client/config` directory as well as module exports and the default running port number.
+
+./client/config
+image::vueConfig.png[]
+
+In addition to basic config files all of your actual application files that you will be building / editing
+are located in the `client/src` directory.
+
+./client/src
+image::vueApp.png[]
+
+Finally any testing files you may have will go in the `client/test` directory.
+
+./client/test
+image::vueTest.png[]

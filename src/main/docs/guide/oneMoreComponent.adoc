@@ -1,0 +1,18 @@
+We are almost done creating new components but we have one more convenience component to create. Go ahead and
+create the final component `VehicleDisplay`, this is almost the same as the components we created in
+<<displayComponents>> except we including a sub-component.
+
+[source,bash]
+----
+$ cd initial/client/src/components
+$ touch VehicleDisplay.vue
+----
+
+Edit it to look like the following...
+
+[source,javascript]
+./client/src/components/VehicleDisplay.vue
+----
+include::{sourceDir}/client/src/components/VehicleDisplay.vue[]
+----
+<1> Include the sub-component of `FullTable` that we previously created.
