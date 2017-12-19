@@ -6,5 +6,5 @@ import groovy.transform.CompileStatic
 @CompileStatic
 @Service(Vehicle)
 interface VehicleDataService {
-    Vehicle save(String name, Driver drive, Make make, Model model)
+    Vehicle save(String name, Driver driver, Make make, Model model)
 }
