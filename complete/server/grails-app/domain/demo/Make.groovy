@@ -1,9 +1,9 @@
-package vuebackend
+package demo
 
 import grails.rest.Resource
 
-@Resource(uri = '/model')
-class Model {
+@Resource(uri = '/make')
+class Make {
 
     String name
 
