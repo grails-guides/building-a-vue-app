@@ -1,4 +1,4 @@
-In this guide you are going to create Grails app using Vue.js as the view layer. We will be using the same
+In this guide you are going to create Grails app using https://vuejs.org[Vue.js] as the view layer. We will be using the same
 'Garage' application that we have built before in several of our other guides located
 http://guides.grails.org/building-a-react-app/guide/index.html[here] and
 http://guides.grails.org/vaadin-grails/guide/index.html[here] for additional reference.
