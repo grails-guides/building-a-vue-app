@@ -1,4 +1,4 @@
-package vuebackend
+package demo
 
 class UrlMappings {
 
