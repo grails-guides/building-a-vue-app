@@ -21,7 +21,7 @@ block.
 "style-loader": "^0.18.2",
 ----
 
-For more information on the `bootstrap-vue` project check out their docs https://bootstrap-vue.js.org/docs/setup/[here].
+For more information on the `bootstrap-vue` project check out https://bootstrap-vue.js.org[Bootstrap + Vue documentation].
 Now that we have included the bootstrap framework in our project we need to make it accessible to our components.
 To use our new bootstrap library include the following in our `client/src/main.js`.
 
