@@ -1,4 +1,4 @@
-Before we jump right into coding our client app lets take a quick overview of Vue.js. Vue.js is one of several
+Before we jump right into coding our client app lets take a quick overview of https://vuejs.org[Vue.js]. Vue.js is one of several
 major Javascript frameworks in the market and is currently competing with and comparable to React and Angular.
 It has its own ecosystem of plugins available to extend its functionality but works with npm like all the other
 major players. Vue is sort of a middle ground between React and Angular but it is definitely more React-like as it
