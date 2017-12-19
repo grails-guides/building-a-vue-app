@@ -8,7 +8,7 @@ $ grails create-domain-class demo.Make
 $ grails create-domain-class demo.Model
 ----
 
-Now let's edit our domain class under `grails-app/domain/vuebackend/`. We'll add some properties and the `@Resource` annotation.
+Now let's edit our domain class under `grails-app/domain/demo/`. We'll add some properties and the `@Resource` annotation.
 
 [source,groovy]
 .server/grails-app/domain/demo/Vehicle.groovy
