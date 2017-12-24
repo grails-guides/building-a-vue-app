@@ -1,23 +1,26 @@
-Understanding the layout of a Vue.js app is fairly straight forward but here is a few quick tips on where to
-find different parts of your application. Your initial directory listing for the client should look like the
-following.
+The Vue-CLI project includes all the configuration necessary to run, test and build the Vue.js project. It follows conventions that are recommended by the Vue.js community.
+
 
 ./client
 image::vueDirListing.png[]
 
-If you need to change environment specific details you will fine those files located in the
-`client/config` directory as well as module exports and the default running port number.
+The `build` directory contains the webpack configuration files, including environment-specific config for dev, prod, and test environments.
+
+The `config` directory contains non-build related configuration, including environment-specific config as described above. One config property of interest is `SERVER_URL`, which points to the URL of the Grails `server` application, and is set by default to `http://localhost:8080`. You can edit this to point to another server if needed.
 
 ./client/config
 image::vueConfig.png[]
 
-In addition to basic config files all of your actual application files that you will be building / editing
-are located in the `client/src` directory.
+TIP: While they serve a similar function, please remember that the Vue/webpack environment settings aren't related directly to Grails environments - e.g., if you run/build your Grails project with a specific environment, it won't automatically affect the environment in the `client` project.
 
-./client/src
-image::vueApp.png[]
+The `static` directory contains static assets that should not be processed by webpack - you won't be using it in this guide.
 
-Finally any testing files you may have will go in the `client/test` directory.
+The `test`  directory contains unit and integration (end-to-end) tests for the Vue.js app.
 
 ./client/test
 image::vueTest.png[]
+
+The `src` directory contains the actual source code for our Vue.js project. It includes subdirectories for components, assets (e.g., CSS files), and the default Vue-Router configuration. This is a typical project structure for a Vue.js app, however you can apply whatever directory structure suits your needs within the `src` directory. This is where we will be spending most of our time in the remainder of this guide.
+
+./client/src
+image::vueApp.png[]

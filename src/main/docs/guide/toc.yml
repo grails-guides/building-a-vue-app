@@ -6,14 +6,11 @@ runningTheApp:
   title: Running the Application
 writingTheServer:
   title: Building the Server
-  grailsConfig: Grails config for Vue.js
   testingApi: Testing the API
   customizingApi: Customizing the API
 writingTheClient:
   title: Building the Client
   clientAppLayout: Default Vue.js App layout
-  vueConfig: Vue.js config customizations
-  vueAppConfig: Server URL
   writingVueComponents: Writing our Vue components
   headers: Simple headers
   displayComponents: Data Display Components / Fetching data from the API

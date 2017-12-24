@@ -1,9 +1,1 @@
-Before we jump right into coding our client app lets take a quick overview of Vue.js. Vue.js is one of several
-major Javascript frameworks in the market and is currently competing with and comparable to React and Angular.
-It has its own ecosystem of plugins available to extend its functionality but works with npm like all the other
-major players. Vue is sort of a middle ground between React and Angular but it is definitely more React-like as it
-uses One-way data binding and requires you add things to your app as needed, not as much stuff is built in as in
-Angular. One stand out feature that Vue incorporates as it uses vanilla HTML and CSS when writing pages so in that
-aspect there is no learning curve. To read more on Vue.js check out their great documentation
-https://vuejs.org/v2/guide/[here] and for general info on the framework https://vuejs.org/[here].
-With that said lets get into building our client.
+At this point our `server` project is done and we are ready to begin building our Vue.js `client` app.  Let's get an overview of the project structure provided by the Vue profile and the Vue-CLI.

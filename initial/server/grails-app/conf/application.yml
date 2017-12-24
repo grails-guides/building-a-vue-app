@@ -1,8 +1,8 @@
 ---
 grails:
-    profile: rest-api
+    profile: org.grails.profiles:vue:1.0.0.RC1
     codegen:
-        defaultPackage: vuebackend
+        defaultPackage: demo
     spring:
         transactionManagement:
             proxies: false
@@ -65,6 +65,10 @@ grails:
     converters:
         encoding: UTF-8
 
+---
+grails:
+    cors:
+        enabled: true
 ---
 hibernate:
     cache:

@@ -1,15 +1,4 @@
-Now, when running our app, we can try out the RESTful API that Grails has generated for us.
-
-[source,bash]
-----
-$ cd initial
-$ ./gradlew server:bootRun
-----
-
-NOTE: If you wish to run the app using the Grails wrapper `./grailsw run-app` instead of Gradle make sure that
-you are in your `server` directory when starting up the app or using a local installation of Grails 3.3.0.
-
-Now we can exercise the API using cURL or another API tool.
+While the Grails app is running, we can try out the RESTful API that Grails has generated for us, using cURL or another API tool.
 
 Make a `GET` request to `/vehicle` to get a list of Vehicles:
 
