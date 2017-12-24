@@ -27,7 +27,6 @@
   import MakeSelect from '../components/MakeSelect' // <1>
   import ModelSelect from '../components/ModelSelect'
   import DriverSelect from '../components/DriverSelect'
-  import { SERVER_URL } from '../config/config'
 
   export default {
     name: 'vehicleadd',
@@ -42,14 +41,15 @@
         make: '',
         model: '',
         driver: '',
-        name: ''
+        name: '',
+        serverURL: process.env.SERVER_URL
       }
     },
     methods: {
       submitNewVehicle: function () {
         console.log('submitNewVehicle...')
         let vehicle = {name: this.name, make: this.make, model: this.model, driver: this.driver} // <4>
-        fetch(`${SERVER_URL}/vehicle`, { // <5>
+        fetch(`${this.serverURL}/vehicle`, { // <5>
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(vehicle)

@@ -2,18 +2,19 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-// Include BootstrapVue library in our application <1>
-import BootstrapVue from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import router from './router'
+import * as uiv from 'uiv'
+import './assets/css/bootstrap.css'
+import './assets/css/grails.css'
+import './assets/css/main.css'
 
 Vue.config.productionTip = false
 
-Vue.use(BootstrapVue) // <2>
-
-/* eslint-disable no-new */ // <3>
+Vue.use(uiv)
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
+  router,
   template: '<App/>',
   components: { App }
 })

@@ -11,8 +11,6 @@
 </template>
 
 <script>
-  import { SERVER_URL } from '../config/config'
-
   export default {
     name: 'makeSelect',
     template: '#makeSelect-template',
@@ -20,7 +18,8 @@
     data: function () {      // <2>
       return {
         makes: [],
-        selected: this.value // <3>
+        selected: this.value, // <3>
+        serverURL: process.env.SERVER_URL
       }
     },
     created: function () {   // <4>
@@ -28,7 +27,7 @@
     },
     methods: {               // <5>
       fetchData: function () {
-        fetch(`${SERVER_URL}/make`)
+        fetch(`${this.serverURL}/make`)
           .then(r => r.json())
           .then(json => this.setData(json))
           .catch(error => console.error('Error retrieving makes: ' + error))

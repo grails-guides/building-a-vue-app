@@ -17,7 +17,6 @@
 
 <script>
   import TableRow from '../components/TableRow.vue'
-  import { SERVER_URL } from '../config/config'
 
   export default {
     name: 'fulltable',
@@ -27,7 +26,8 @@
     },
     data: function () { // <2>
       return {
-        vehicles: []
+        vehicles: [],
+        serverURL: process.env.SERVER_URL
       }
     },
     created: function () { // <3>
@@ -39,7 +39,7 @@
     },
     methods: { // <5>
       fetchData: function () {
-        fetch(`${SERVER_URL}/vehicle`)
+        fetch(`${this.serverURL}/vehicle`)
           .then(r => r.json())
           .then(json => this.setData(json))
           .catch(error => console.error('Error retrieving makes: ' + error))
