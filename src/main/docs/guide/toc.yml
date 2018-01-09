@@ -11,8 +11,8 @@ writingTheServer:
 writingTheClient:
   title: Building the Client
   clientAppLayout: Default Vue.js App layout
-  writingVueComponents: Writing our Vue components
-  headers: Simple headers
+  writingVueComponents: Vue Components
+  headers: UI Header
   displayComponents: Data Display Components / Fetching data from the API
   postComponents: Adding a vehicle / Posting data to the API
   oneMoreComponent: Vehicle Display

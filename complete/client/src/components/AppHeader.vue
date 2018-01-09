@@ -1,4 +1,3 @@
-<!-- Templates can have only one root element -->
 <template id="app-header-template">
   <div class="container">
     <div class="jumbotron">
@@ -10,12 +9,9 @@
 
 <script>
   export default {
-    name: 'appheader',
-    template: '#app-header-template'
+    name: 'app-header'
   }
 </script>
 
-<!-- Per Component Custom CSS Rules -->
 <style>
-  /* Add custom rules here */
 </style>
