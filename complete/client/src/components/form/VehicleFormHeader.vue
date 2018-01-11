@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    name: 'vehicle-add-header'
+    name: 'vehicle-form-header'
   }
 </script>
 
