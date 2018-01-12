@@ -1,25 +1,16 @@
-Now that everything is in place we are finally ready to tie it all together. Back in <<vueConfig>> we said we
-would return to our `App.vue` that Vue.js creates for us.
+If you were to run the `client` app now (or reload if you've kept the `client:start` task running while you followed through the guide), you would notice that the default home page hasn't changed. This is because Vue Router - the official routing library for Vue.js apps - is configured to display the `Welcome` component at the index route. Fortunately, this is a simple change.
+
+Edit the file `client/src/router/index.js` as shown below:
 
 [source,javascript]
-./client/src/App.vue
+./client/src/router/index.js
 ----
-include::{sourceDir}/client/src/App.vue[]
+include::{sourceDir}/client/src/router/index.js[]
 ----
-<1> Import all of our components.
-<2> Inform our top level component about all our other imported components.
+<1> Replace the import and usages of the `Welcome` component with our `Garage` component, for the index `/` route.
 
-As you see our top level component of `App` is just a collection of all our other components that we have
-already built.
+== Run the Application
 
-[source,html]
-----
-<app-header></app-header>
-<vehicle-add-header></vehicle-add-header>
-<vehicle-add></vehicle-add>
-<vehicle-display></vehicle-display>
-----
+Run the `client` project with `./gradlew client:start`, and browse to `http://localhost:3000`. You should see our new Vue app, and be able to interact with the Grails REST API. Congratulations, you've built a Vue.js app with Grails!
 
-Return to <<runningTheApp>> and run the app and you should see the following page.
-
-image::successfulApp.png[]
+image::complete.png[]

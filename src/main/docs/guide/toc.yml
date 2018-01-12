@@ -16,7 +16,7 @@ writingTheClient:
   displayComponents: Select & Table Components
   postComponents: Form Component
   oneMoreComponent: Vehicle Display
-  puttingItAllTogether: Putting it all together
+  puttingItAllTogether: Routing
 nextSteps:
   title: Next Steps
 helpWithGrails:

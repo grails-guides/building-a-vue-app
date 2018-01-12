@@ -1,18 +1,26 @@
+<!--tag::template[]-->
 <template>
   <div id="garage">
     <app-header></app-header>
-    <vehicle-form v-model="vehicle" :makes="makes" :models="models" :drivers="drivers" @submit="submitNewVehicle()"></vehicle-form>
-    <vehicle-table :vehicles="vehicles"></vehicle-table>
+    <vehicle-form v-model="vehicle"
+                  :makes="makes"
+                  :models="models"
+                  :drivers="drivers"
+                  @submit="submitNewVehicle()"> <!--1-->
+
+    </vehicle-form>
+    <vehicle-table :vehicles="vehicles"></vehicle-table> <!--2-->
   </div>
 </template>
-
+<!--end::template[]-->
+<!--tag::component[]-->
 <script>
   import AppHeader from './AppHeader' // <1>
   import VehicleForm from './form/VehicleForm'
   import VehicleTable from './table/VehicleTable'
 
   export default {
-    components: { // <2>
+    components: {  // <1>
       AppHeader,
       VehicleForm,
       VehicleTable
@@ -24,17 +32,31 @@
         models: [],
         makes: [],
         drivers: [],
-        serverURL: process.env.SERVER_URL
+        serverURL: process.env.SERVER_URL // <3>
       }
     },
-    created () { // <3>
-      this.fetchVehicles()
-      this.fetchModels()
-      this.fetchMakes()
-      this.fetchDrivers()
+    // end::component[]
+    // tag::fetch[]
+    created () { // <1>
+      this.fetchData()
     },
     methods: {
-      fetchVehicles: function () {
+      fetchData: async function () { // <2>
+        try {
+          Promise.all([ // <3>
+            this.fetchVehicles(),
+            this.fetchModels(),
+            this.fetchModels(),
+            this.fetchMakes(),
+            this.fetchDrivers()
+          ])
+        } catch (error) {
+          console.log(error)
+        }
+      },
+      // end::fetch[]
+      // tag::methods[]
+      fetchVehicles: function () { // <1>
         fetch(`${this.serverURL}/vehicle`)
           .then(r => r.json())
           .then(json => { this.vehicles = json })
@@ -58,23 +80,29 @@
           .then(json => { this.drivers = json })
           .catch(error => console.error('Error retrieving drivers: ' + error))
       },
+      // end::methods[]
+      // tag::submit[]
       submitNewVehicle: function () {
-        let vehicle = this.vehicle // <4>
-
-        console.log(vehicle)
-        fetch(`${this.serverURL}/vehicle`, { // <5>
+        const vehicle = this.vehicle // <1>
+        fetch(`${this.serverURL}/vehicle`, {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(vehicle)
-        }).then(r => r.json()) // <6>
-          .then(json => { this.vehicles.push(json) })
+        }).then(r => r.json())
+          .then(json => {
+            this.vehicles.push(json) // <2>
+            this.vehicle = {name: '', make: null, model: null, driver: null} // <3>
+          })
           .catch(ex => console.error('Unable to save vehicle', ex))
       }
     }
   }
 </script>
+<!--end::submit[]-->
 
+<!--tag::css[]-->
 <!-- Per Component Custom CSS Rules -->
+<!--1-->
 <style>
   #garage {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -82,3 +110,4 @@
     color: #2c3e50;
   }
 </style>
+<!--end::css[]-->
