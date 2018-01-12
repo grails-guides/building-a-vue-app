@@ -14,12 +14,12 @@ Within the `<script>` tag, we export a JavaScript object as a *module*. This obj
 
 The final section of the single-file-component is the `<style>` tags. Here you can specify component-specific CSS rules. These rules will be "scoped" to the component’s template and will not affect any other HTML elements.
 
-Create a new file named `VehicleAddHeader.vue` under `client/src/components`, and edit it as shown below:
+Create a new file named `VehicleFormHeader.vue` under `client/src/components/form` (create the `form` directory if necessary), and edit it as shown below:
 
 [source,javascript]
 ./client/src/components/VehicleAddHeader.vue
 ----
-include::{sourceDir}/client/src/components/VehicleAddHeader.vue[]
+include::{sourceDir}/client/src/components/form/VehicleFormHeader.vue[]
 ----
 
 //TODO: move this elsewhere
