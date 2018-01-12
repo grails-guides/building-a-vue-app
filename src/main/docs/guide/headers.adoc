@@ -22,5 +22,4 @@ Create a new file named `VehicleFormHeader.vue` under `client/src/components/for
 include::{sourceDir}/client/src/components/form/VehicleFormHeader.vue[]
 ----
 
-//TODO: move this elsewhere
-TIP: When you use a component in a template, the element name will be the component's name, hyphenated. E.g, `AppHeader` will become `<app-header>`. This is default behavior, however you can override this when importing the component by supplying an alternate name as a key in the `components` object: `components: { 'tablerow': TableRow }`
+TIP: By default, when you use a component in a template, the element name will be the component's name, hyphenated. E.g, `AppHeader` will become `<app-header>`.
