@@ -6,7 +6,7 @@ Our first component will be a header bar. Create new file named `AppHeader.vue` 
 include::{sourceDir}/client/src/components/AppHeader.vue[]
 ----
 
-The <template> contains the HTML template that will be rendered by the component. In the sample above, we are rendering a `<div>` tag to represent our UI's main header, including a banner image and `<h1>` tag.
+The `<template>` contains the HTML template that will be rendered by the component. In the sample above, we are rendering a `<div>` tag to represent our UI's main header, including a banner image and `<h1>` tag.
 
 TIP: Every `<template>` must contain only one root-level element.
 
