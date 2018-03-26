@@ -1,7 +1,5 @@
 <template>
   <div>
-
-
     <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -48,7 +46,7 @@
               <btn type="primary" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                    aria-expanded="false">Installed Plugins <span class="caret"></span></btn>
               <template slot="dropdown" v-if="serverInfo">
-                <li v-for="plugin in serverInfo.plugins">
+                <li v-for="plugin in serverInfo.plugins" :key="plugin.name">
                   <a href="#">{{ plugin.name }} - {{ plugin.version }}</a>
                 </li>
 
@@ -59,7 +57,6 @@
         </div>
       </div>
     </div>
-
 
     <div class="svg" role="presentation">
       <div class="grails-logo-container">
@@ -86,12 +83,11 @@
           <ul v-if="serverInfo">
 
             <li v-if="serverInfo.controllers" v-for="controller in serverInfo.controllers" :key="controller.name">
-              <a v-bind:href="serverURL + '/' + controller.logicalPropertyName">{{controller.name }}</a></li>
+              <a :href="serverURL + '/' + controller.logicalPropertyName">{{controller.name }}</a></li>
           </ul>
         </div>
       </section>
     </div>
-
 
     <div class="footer" role="contentinfo"></div>
 
@@ -99,29 +95,29 @@
 </template>
 
 <script>
-  export default {
-    name: 'Welcome',
-    data () {
-      return {
-        msg: 'Welcome to Your Grails & Vue.js App',
-        serverInfo: null,
-        showLinks: false,
-        serverURL: process.env.SERVER_URL
-      }
-    },
-    methods: {
-      toggleLinks: function () {
-        this.showLinks = !this.$data.showLinks
-      }
-    },
-    created: function () {
-      fetch(`${this.$data.serverURL}/application`)
-        .then(response => response.json())
-        .then(json => {
-          this.serverInfo = json
-        })
+export default {
+  name: 'Welcome',
+  data () {
+    return {
+      msg: 'Welcome to Your Grails & Vue.js App',
+      serverInfo: null,
+      showLinks: false,
+      serverURL: process.env.SERVER_URL
     }
+  },
+  methods: {
+    toggleLinks: function () {
+      this.showLinks = !this.$data.showLinks
+    }
+  },
+  created: function () {
+    fetch(`${this.$data.serverURL}/application`)
+      .then(response => response.json())
+      .then(json => {
+        this.serverInfo = json
+      })
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

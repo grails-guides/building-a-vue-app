@@ -1,5 +1,5 @@
 <template id="fulltable-template" xmlns="http://www.w3.org/1999/xhtml">
-	<table class="table">
+  <table class="table">
     <thead class="thead-inverse">
       <tr>
         <th>ID</th>
@@ -11,18 +11,18 @@
     </thead> <!--1-->
       <table-row v-for="vehicle in vehicles"
                  :item="vehicle" :key="vehicle.id"></table-row> <!--2-->
-	</table>
+  </table>
 </template>
 
 <script>
-  import TableRow from './TableRow.vue' // <3>
+import TableRow from './TableRow.vue' // <3>
 
-  export default {
-    props: ['vehicles'],
-    components: {  // <3>
-      TableRow
-    }
+export default {
+  props: ['vehicles'],
+  components: { // <3>
+    TableRow
   }
+}
 </script>
 
 <style>

@@ -32,25 +32,25 @@
 </template>
 
 <script>
-  import VehicleFormHeader from './VehicleFormHeader'
-  import FieldSelect from './FieldSelect'
+import VehicleFormHeader from './VehicleFormHeader'
+import FieldSelect from './FieldSelect'
 
-  export default {
-    props: ['vehicle', 'makes', 'models', 'drivers'], // <6>
-    model: {
-      prop: 'vehicle', // <4>
-      event: 'change'
-    },
-    components: {
-      VehicleFormHeader,
-      FieldSelect
-    },
-    methods: {
-      submit () {  // <5>
-        this.$emit('submit')
-      }
+export default {
+  props: ['vehicle', 'makes', 'models', 'drivers'], // <6>
+  model: {
+    prop: 'vehicle', // <4>
+    event: 'change'
+  },
+  components: {
+    VehicleFormHeader,
+    FieldSelect
+  },
+  methods: {
+    submit () { // <5>
+      this.$emit('submit')
     }
   }
+}
 </script>
 
 <style>

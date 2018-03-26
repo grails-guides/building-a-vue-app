@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Garage',  // <1>
-      component: Garage  // <1>
+      name: 'Garage', // <1>
+      component: Garage // <1>
     }
   ]
 })

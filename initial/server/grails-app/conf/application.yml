@@ -1,11 +1,8 @@
 ---
 grails:
-    profile: org.grails.profiles:vue:1.0.0.RC1
+    profile: vue
     codegen:
         defaultPackage: demo
-    spring:
-        transactionManagement:
-            proxies: false
     gorm:
         reactor:
             # Whether to translate GORM events into Reactor events

@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  export default {
-    props: ['item'] // <1>
-  }
+export default {
+  props: ['item'] // <1>
+}
 </script>
 
 <!-- Per Component Custom CSS Rules -->

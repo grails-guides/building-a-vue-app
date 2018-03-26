@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Welcome from '@/components/Welcome'
-const uiv = require("uiv");
-
+const uiv = require('uiv')
 
 describe('Welcome.vue', () => {
   it('should render correct contents', () => {

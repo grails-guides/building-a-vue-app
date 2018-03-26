@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'vehicle-form-header'
-  }
+export default {
+  name: 'vehicle-form-header'
+}
 </script>
 
 <style>
