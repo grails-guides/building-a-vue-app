@@ -11,7 +11,4 @@ class Vehicle {
     Model model
 
     static belongsTo = [driver: Driver]
-
-    static constraints = {
-    }
 }

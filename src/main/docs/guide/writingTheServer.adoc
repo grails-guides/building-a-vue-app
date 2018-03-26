@@ -34,7 +34,33 @@ include::{sourceDir}/server/grails-app/domain/demo/Make.groovy[]
 include::{sourceDir}/server/grails-app/domain/demo/Model.groovy[]
 ----
 
-Since we've added the `@Resource` annotation to our domain classes, Grails will generate RESTful URL mappings for each of them. Let's preload some data:
+Since we've added the `@Resource` annotation to our domain classes, Grails will generate RESTful URL mappings for each of them.
+Let's preload some data with the help of
+http://gorm.grails.org/latest/hibernate/manual/index.html#dataServices[GORM Data Services].
+
+[source,groovy]
+.server/grails-app/services/demo/MakeDataService.groovy
+----
+include::{sourceDir}/server/grails-app/services/demo/MakeDataService.groovy[]
+----
+
+[source,groovy]
+.server/grails-app/services/demo/ModelDataService.groovy
+----
+include::{sourceDir}/server/grails-app/services/demo/ModelDataService.groovy[]
+----
+
+[source,groovy]
+.server/grails-app/services/demo/DriverDataService.groovy
+----
+include::{sourceDir}/server/grails-app/services/demo/DriverDataService.groovy[]
+----
+
+[source,groovy]
+.server/grails-app/services/demo/VehicleDataService.groovy
+----
+include::{sourceDir}/server/grails-app/services/demo/VehicleDataService.groovy[]
+----
 
 [source,groovy]
 .server/grails-app/init/demo/BootStrap.groovy
