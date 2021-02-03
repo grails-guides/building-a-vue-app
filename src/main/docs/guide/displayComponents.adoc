@@ -69,9 +69,6 @@ components: {
 
 This of course assumes that you want to use the same name for the component as the component's `.vue` file (`TableRow.vue`, in our case). If not, you could use this object to effectively "rename" the component within your template:
 
-
-Notice that the `components` object is *not* an array, it is an object. We are using some ES6 shorthand to combine the key and value when both have the same name. In other words, the `components` object above is exactly the same as this code:
-
 [source,javascript]
 ----
 components: {
